@@ -1,0 +1,25 @@
+{
+  "name": "webapp-tolearn",
+  "version": "1.0.0",
+  "description": "Simple CRM Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amith1596/WebApp-tolearn.git"
+  },
+  "keywords": [
+    "crm",
+    "customer",
+    "backend",
+    "react"
+  ],
+  "author": "Amith P",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Amith1596/WebApp-tolearn/issues"
+  },
+  "homepage": "https://github.com/Amith1596/WebApp-tolearn#readme"
+}
