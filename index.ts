@@ -1,13 +1,28 @@
 import { LogManager } from "./common";
 import { Customer } from "./models";
-class MainClass {​​
-    static main(): void {
-        const customer = new Customer(1, "Northwind", "Bangalore",
-            "info@northwind.com", "080-498349834", "SILVER",
-            12000, true, "Simple Remarks");
+import { Configuration } from "./config";
+import { CustomerService } from "./business/services";
 
-        LogManager.info(customer.toString());
+class MainClass {
+    static main(): void {
+        try {
+            const service = new CustomerService();
+            const promise = service.searchCustomers("Mean");
+
+            promise
+                .then(records => {
+                    if (records !== null) {
+                        for (const record of records) {
+                            LogManager.info(record.customerId + ", " +
+                                record.customerName);
+                        }
+                    }
+                })
+                .finally(() => LogManager.info("Service Invokded Successfully!"));
+        } catch (error) {
+            LogManager.error(error);
+        }
     }
-}​​
+}
 
 MainClass.main();
